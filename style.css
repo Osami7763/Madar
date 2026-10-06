@@ -18,3 +18,9 @@
 
 /* Lift only the orbital mark in the top navigation. */
 .site-header .brand-mark{transform:translateY(-4px) rotate(-29deg)}
+
+/* Complete topic facts: readable cards that grow with their full sentences. */
+.dialog-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+.dialog-fact{display:block;min-width:0;padding:11px 12px;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:7px;color:#bdc6d5;font-size:10px;line-height:1.85;overflow-wrap:anywhere}
+.dialog-fact strong{display:block;margin:5px 0 0;color:var(--mint);font-size:11px;line-height:1.85;font-weight:600}
+@media(max-width:520px){.dialog-facts{grid-template-columns:minmax(0,1fr)}.dialog-fact{font-size:11px}.dialog-fact strong{font-size:12px}}
