@@ -68,3 +68,13 @@ html,body{background:#070d19;color:#e9eef3}
 .topic-card,.feature-card,.planet-card,.comparison-band,.simulator-shell,.detail-dialog{background-color:#0b1726}
 .topic-card:hover{background:linear-gradient(270deg,rgba(156,232,217,.12),rgba(14,29,44,.8))}.topic-icon{background:rgba(144,210,202,.06)}
 .school-logo{background:#152536;box-shadow:0 12px 32px rgba(0,0,0,.3)}
+
+/* New Najd Secondary project emblem and duplicated project introduction. */
+.intro-card .school-logo{width:154px;height:218px;object-fit:contain;background:transparent;padding:0;border-radius:18px;margin-bottom:14px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.35))}
+.intro-project-info{display:grid;gap:6px;margin:0 auto 18px;padding:14px 16px;border:1px solid rgba(165,223,208,.22);border-radius:18px;background:rgba(11,24,39,.72);color:#c8d8db;font-size:11px;line-height:1.65}
+.intro-project-info strong{color:#a5dfd0;font-size:18px;line-height:1.2}
+.intro-project-info span{color:#d7e3e3}
+.intro-project-info b{color:#d7b980;font-size:11px;margin-top:3px}
+.intro-project-info small{color:#9eb4ba;font-size:10px;line-height:1.8}
+.project-brand img{width:112px;height:154px;object-fit:contain;background:#102131;border-color:#315263;padding:4px}
+@media(max-width:580px){.intro-card .school-logo{width:128px;height:176px}.intro-project-info{padding:12px 10px}.intro-project-info strong{font-size:16px}.project-brand img{width:92px;height:128px}}
