@@ -15,6 +15,19 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="intro-screen" id="intro-screen" role="dialog" aria-label="شاشة ترحيب مدار">
+      <div class="intro-stars"></div>
+      <div class="intro-glow"></div>
+      <div class="intro-card">
+        <img src="./assets/najd-secondary.jpg" alt="شعار ثانوية نجد" class="school-logo" />
+        <span class="intro-kicker">ثانوية نجد · مشروع مدار</span>
+        <h1>نفتح نافذة<br /><em>على الكون.</em></h1>
+        <p>لحظات ونبدأ رحلة معرفية بين الكواكب والنجوم ورواد الفضاء.</p>
+        <div class="intro-loader"><span></span></div>
+        <small>جارٍ تجهيز الرحلة</small>
+        <button type="button" data-skip-intro>الدخول الآن <span>↙</span></button>
+      </div>
+    </div>
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="مدار، الصفحة الرئيسية">
         <span class="brand-mark" aria-hidden="true"><i></i></span>
@@ -25,6 +38,7 @@
         <a class="nav-link" href="#simulator">المحاكي</a>
         <a class="nav-link" href="#planets">الكواكب</a>
         <a class="nav-link" href="#universe">أسرار الكون</a>
+        <a class="nav-link" href="#astronauts">رواد الفضاء</a>
       </nav>
       <div class="header-end">
         <label class="search-wrap" for="site-search">
@@ -121,6 +135,30 @@
         </div>
       </section>
 
+
+      <section class="section atlas-section" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-topline"><span>04 / موسوعة الفضاء</span><span>من الذرة إلى أبعد مجرة</span></div>
+        <div class="section-heading atlas-heading"><div><div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> خريطة المعرفة</div><h2 id="atlas-title">كلما اتسع<br /><em>سؤالك، اتسع الكون.</em></h2></div><p>الفضاء ليس فراغًا فقط؛ إنه تاريخ للمادة والطاقة والزمن. هذه خريطة مرتبة تساعدك على فهم الصورة الكبيرة من نشأة الكون حتى مستقبل الاستكشاف.</p></div>
+        <div class="atlas-grid">
+          <article class="atlas-card"><span class="atlas-number">01</span><span class="atlas-icon">◌</span><h3>بداية الكون</h3><p>يقدّر عمر الكون بنحو 13.8 مليار سنة. بدأ من حالة شديدة الكثافة والحرارة، ثم تمدد وتبرد، فتكوّنت الجسيمات والذرات والنجوم والمجرات.</p><div><b>مفتاح الفكرة</b><span>التمدد الكوني</span></div></article>
+          <article class="atlas-card"><span class="atlas-number">02</span><span class="atlas-icon">✦</span><h3>النجوم والطاقة</h3><p>تولد النجوم داخل سحب الغاز. في قلوبها يندمج الهيدروجين، فتتكون عناصر جديدة ويخرج الضوء. كتلة النجم تحدد عمره ونهايته.</p><div><b>مفتاح الفكرة</b><span>الاندماج النووي</span></div></article>
+          <article class="atlas-card"><span class="atlas-number">03</span><span class="atlas-icon">◉</span><h3>المجرات والمادة المظلمة</h3><p>المجرة مدينة كونية تضم نجومًا وغازًا وغبارًا. تربطها الجاذبية، وتكشف حركة النجوم عن مادة مظلمة لا نراها مباشرة.</p><div><b>مفتاح الفكرة</b><span>الجاذبية والبنية</span></div></article>
+          <article class="atlas-card"><span class="atlas-number">04</span><span class="atlas-icon">◎</span><h3>الماء والحياة</h3><p>يبحث العلماء عن الماء السائل والكيمياء المناسبة ومصادر الطاقة. الأرض المثال الوحيد المعروف للحياة، لكن أقمارًا مثل أوروبا وإنسيلادوس تستحق الدراسة.</p><div><b>مفتاح الفكرة</b><span>قابلية السكن</span></div></article>
+          <article class="atlas-card"><span class="atlas-number">05</span><span class="atlas-icon">◒</span><h3>الزمن والمسافة</h3><p>السنة الضوئية وحدة مسافة، وهي ما يقطعه الضوء خلال سنة. عندما ننظر بعيدًا في الفضاء، نرى الأجرام كما كانت في الماضي.</p><div><b>مفتاح الفكرة</b><span>نرى الماضي</span></div></article>
+          <article class="atlas-card"><span class="atlas-number">06</span><span class="atlas-icon">✧</span><h3>كيف نستكشف؟</h3><p>نستخدم التلسكوبات والمسابير والمركبات المأهولة والأقمار الصناعية. كل أداة تجيب عن سؤال مختلف: ما الذي يلمع؟ وما الذي يتحرك؟ وما الذي يمكن أن يدعم الحياة؟</p><div><b>مفتاح الفكرة</b><span>الملاحظة والتجربة</span></div></article>
+        </div>
+      </section>
+
+      <section class="section astronauts-section" id="astronauts" aria-labelledby="astronauts-title">
+        <div class="section-topline"><span>05 / وجوه تجاوزت السماء</span><span>رحلات، جنسيات، وتواريخ صنعت التاريخ</span></div>
+        <div class="section-heading astronauts-heading"><div><div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> سجل الرواد</div><h2 id="astronauts-title">أشخاص جعلوا<br /><em>المستحيل قريبًا.</em></h2></div><p>من أول مدار حول الأرض إلى الإقامة الطويلة في المحطة الدولية، تعرّف إلى رواد فضاء من دول مختلفة، ولماذا صعدوا وماذا أضافت مهماتهم إلى المعرفة الإنسانية.</p></div>
+        <div class="astronaut-grid" id="astronaut-grid"></div>
+      </section>
+
+      <section class="section project-section" id="project" aria-labelledby="project-title">
+        <div class="project-card"><div class="project-brand"><img src="./assets/najd-secondary.jpg" alt="شعار ثانوية نجد" /><span>مشروع مدار<br /><small>رحلتنا التعليمية إلى الفضاء</small></span></div><div class="project-copy"><div class="eyebrow"><span class="live-dot"></span> بطاقة المشروع</div><h2 id="project-title">المعرفة تبدأ<br /><em>بسؤال صغير.</em></h2><p>هذا العمل التعليمي يقرّب مفاهيم الفضاء إلى الطلاب بلغة عربية واضحة وتجربة تفاعلية تجمع بين القراءة والمشاهدة والمحاكاة.</p></div><div class="project-people"><div class="person-line"><span>إشراف رائد النشاط</span><strong>فيصل القحطاني</strong></div><div class="person-line"><span>مدير المدرسة</span><strong>فهد عبدالله الشهري</strong></div><div class="students-title">الطلاب القائمون على المشروع</div><div class="student-list"><span>أسامة سامي</span><span>منصور العنزي</span><span>خليل إبراهيم</span><span>أحمد شوقي</span></div></div></div>
+      </section>
+
       <section class="closing-section"><div class="closing-stars"></div><div class="closing-content"><span class="eyebrow"><span class="live-dot"></span> والمشهد مستمر</span><h2>الكون لا ينفد.<br /><em>ولا الأسئلة.</em></h2><p>اختر جرمًا. غيّر المنظور. واترك للفضول أن يقودك.</p><a class="button button-primary" href="#simulator">عد إلى المحاكي <span aria-hidden="true">↙</span></a></div><div class="closing-coordinate">18h 36m 56s<br />+38° 47′ 01″<span>موضع مجرة هرقل</span></div><span class="closing-orbit" aria-hidden="true"></span></section>
     </main>
 
@@ -128,5 +166,6 @@
 
     <dialog class="detail-dialog" id="detail-dialog"><button class="dialog-close" id="dialog-close" aria-label="إغلاق">×</button><span class="dialog-kicker" id="dialog-kicker"></span><h2 id="dialog-title"></h2><p class="dialog-lead" id="dialog-lead"></p><div class="dialog-body" id="dialog-body"></div><div class="dialog-facts" id="dialog-facts"></div></dialog>
     <script src="./script.js"></script>
+    <script src="./astronauts.js"></script>
   </body>
 </html>
