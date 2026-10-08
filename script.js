@@ -244,8 +244,10 @@ const allBodies = [
     article: "cosmic-events",
   },
 ];
-const $ = (s, root = document) => root.querySelector(s);
-const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+const query = (selector, root = document) => root.querySelector(selector);
+const queryAll = (selector, root = document) => [
+  ...root.querySelectorAll(selector),
+];
 let selectedIndex = 2,
   running = true,
   orbitsVisible = true,
@@ -257,9 +259,9 @@ let selectedIndex = 2,
   camera = { x: 0, y: 0 },
   drag = null,
   hovered = -1;
-const canvas = $("#solar-canvas"),
+const canvas = query("#solar-canvas"),
   ctx = canvas.getContext("2d"),
-  wrap = $("#canvas-wrap");
+  wrap = query("#canvas-wrap");
 let width = 0,
   height = 0,
   dpr = 1,
@@ -267,26 +269,26 @@ let width = 0,
 function updatePlanetInfo(index) {
   selectedIndex = (index + planets.length) % planets.length;
   const p = planets[selectedIndex];
-  $("#body-index").textContent =
+  query("#body-index").textContent =
     `${String(selectedIndex + 1).padStart(2, "0")} / 08`;
-  $("#body-kind").textContent = p.kind;
-  $("#body-name").textContent = p.name;
-  $("#body-description").textContent = p.description;
-  $("#body-distance").textContent = p.distance;
-  $("#body-year").textContent = p.year;
-  $("#body-fact").textContent = p.fact;
-  $("#selected-orb").style.setProperty("--planet-color", p.color);
-  $$(".planet-chip").forEach((b, i) => {
+  query("#body-kind").textContent = p.kind;
+  query("#body-name").textContent = p.name;
+  query("#body-description").textContent = p.description;
+  query("#body-distance").textContent = p.distance;
+  query("#body-year").textContent = p.year;
+  query("#body-fact").textContent = p.fact;
+  query("#selected-orb").style.setProperty("--planet-color", p.color);
+  queryAll(".planet-chip").forEach((b, i) => {
     b.classList.toggle("selected", i === selectedIndex);
     b.setAttribute("aria-pressed", String(i === selectedIndex));
   });
-  $$(".planet-card").forEach((b, i) =>
+  queryAll(".planet-card").forEach((b, i) =>
     b.classList.toggle("is-selected", i === selectedIndex),
   );
 }
 function renderPlanets() {
-  const selector = $("#planet-selector"),
-    cards = $("#planet-cards");
+  const selector = query("#planet-selector"),
+    cards = query("#planet-cards");
   selector.innerHTML = "";
   cards.innerHTML = "";
   planets.forEach((p, i) => {
@@ -328,20 +330,17 @@ function resizeCanvas() {
   canvas.width = Math.round(width * dpr);
   canvas.height = Math.round(height * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const seeded = (n) => {
-    const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
-    return x - Math.floor(x);
-  };
-  starField = Array.from(
-    { length: Math.round((width * height) / 5200) },
-    (_, i) => ({
-      x: seeded(i + 1) * width,
-      y: seeded(i + 80) * height,
-      r: 0.35 + seeded(i + 600) * 1.05,
-      a: 0.3 + seeded(i + 900) * 0.52,
-      phase: seeded(i + 1200) * 6.28,
-    }),
-  );
+  starField = [];
+  const starCount = Math.round((width * height) / 5200);
+  for (let i = 0; i < starCount; i += 1) {
+    starField.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: 0.35 + Math.random() * 1.05,
+      a: 0.3 + Math.random() * 0.52,
+      phase: Math.random() * Math.PI * 2,
+    });
+  }
   drawScene();
 }
 function orbitRadius(factor) {
@@ -506,42 +505,42 @@ renderPlanets();
 resizeCanvas();
 new ResizeObserver(resizeCanvas).observe(wrap);
 requestAnimationFrame(frame);
-$("#play-toggle").addEventListener("click", () => {
+query("#play-toggle").addEventListener("click", () => {
   running = !running;
-  $("#play-symbol").textContent = running ? "Ⅱ" : "▶";
-  $("#play-label").textContent = running ? "إيقاف" : "تشغيل";
-  $("#play-toggle").setAttribute(
+  query("#play-symbol").textContent = running ? "Ⅱ" : "▶";
+  query("#play-label").textContent = running ? "إيقاف" : "تشغيل";
+  query("#play-toggle").setAttribute(
     "aria-label",
     running ? "إيقاف الحركة" : "استئناف الحركة",
   );
 });
-$("#speed-control").addEventListener("input", (e) => {
+query("#speed-control").addEventListener("input", (e) => {
   speed = [0, 0.25, 0.65, 1, 1.8][Number(e.target.value)];
-  $("#speed-label").textContent =
+  query("#speed-label").textContent =
     `×${speed === 0.25 ? "¼" : speed === 0.65 ? "½" : speed}`;
 });
-$("#toggle-orbits").addEventListener("click", (e) => {
+query("#toggle-orbits").addEventListener("click", (e) => {
   orbitsVisible = !orbitsVisible;
   e.currentTarget.setAttribute("aria-pressed", String(orbitsVisible));
 });
-$("#toggle-labels").addEventListener("click", (e) => {
+query("#toggle-labels").addEventListener("click", (e) => {
   labelsVisible = !labelsVisible;
   e.currentTarget.setAttribute("aria-pressed", String(labelsVisible));
 });
 function setZoom(value) {
   zoom = Math.min(1.8, Math.max(0.58, value));
-  $("#zoom-readout").textContent = `${Math.round(zoom * 100)}%`;
+  query("#zoom-readout").textContent = `${Math.round(zoom * 100)}%`;
 }
-$("#zoom-in").addEventListener("click", () => setZoom(zoom + 0.12));
-$("#zoom-out").addEventListener("click", () => setZoom(zoom - 0.12));
-$("#reset-view").addEventListener("click", () => {
+query("#zoom-in").addEventListener("click", () => setZoom(zoom + 0.12));
+query("#zoom-out").addEventListener("click", () => setZoom(zoom - 0.12));
+query("#reset-view").addEventListener("click", () => {
   camera = { x: 0, y: 0 };
   setZoom(1);
   elapsed = 0;
   running = true;
-  $("#play-symbol").textContent = "Ⅱ";
-  $("#play-label").textContent = "إيقاف";
-  $("#play-toggle").setAttribute("aria-label", "إيقاف الحركة");
+  query("#play-symbol").textContent = "Ⅱ";
+  query("#play-label").textContent = "إيقاف";
+  query("#play-toggle").setAttribute("aria-label", "إيقاف الحركة");
 });
 wrap.addEventListener(
   "wheel",
@@ -604,15 +603,17 @@ function bodyAt(p) {
   }
   return -1;
 }
-const dialog = $("#detail-dialog");
+const dialog = query("#detail-dialog");
 function openArticle(key) {
   const a = articles[key];
   if (!a) return;
-  $("#dialog-kicker").textContent = a.kicker;
-  $("#dialog-title").textContent = a.title;
-  $("#dialog-lead").textContent = a.lead;
-  $("#dialog-body").innerHTML = a.paragraphs.map((x) => `<p>${x}</p>`).join("");
-  $("#dialog-facts").innerHTML = a.facts
+  query("#dialog-kicker").textContent = a.kicker;
+  query("#dialog-title").textContent = a.title;
+  query("#dialog-lead").textContent = a.lead;
+  query("#dialog-body").innerHTML = a.paragraphs
+    .map((x) => `<p>${x}</p>`)
+    .join("");
+  query("#dialog-facts").innerHTML = a.facts
     .map(
       ([label, value]) =>
         `<span class="dialog-fact">${label}<strong>${value}</strong></span>`,
@@ -620,10 +621,10 @@ function openArticle(key) {
     .join("");
   dialog.showModal();
 }
-$$("[data-open]").forEach((button) =>
+queryAll("[data-open]").forEach((button) =>
   button.addEventListener("click", () => openArticle(button.dataset.open)),
 );
-$("#dialog-close").addEventListener("click", () => dialog.close());
+query("#dialog-close").addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", (e) => {
   if (e.target === dialog) dialog.close();
 });
@@ -637,8 +638,8 @@ function openEntity(name) {
       .scrollIntoView({ behavior: "smooth", block: "start" });
   } else openArticle(item.article);
 }
-const search = $("#site-search"),
-  results = $("#search-results");
+const search = query("#site-search"),
+  results = query("#search-results");
 function performSearch(q) {
   results.innerHTML = "";
   if (!q.trim()) {
@@ -686,7 +687,7 @@ function performSearch(q) {
 search.addEventListener("input", (e) => performSearch(e.target.value));
 search.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    const first = $(".search-result", results);
+    const first = query(".search-result", results);
     if (first) first.click();
   }
   if (e.key === "Escape") results.classList.remove("open");
@@ -700,15 +701,15 @@ document.addEventListener("keydown", (e) => {
     search.focus();
   }
 });
-const menu = $("#menu-toggle");
+const menu = query("#menu-toggle");
 menu.addEventListener("click", () => {
-  const open = $(".main-nav").classList.toggle("open");
+  const open = query(".main-nav").classList.toggle("open");
   menu.setAttribute("aria-expanded", String(open));
   menu.setAttribute("aria-label", open ? "إغلاق القائمة" : "فتح القائمة");
 });
-$$(".nav-link").forEach((a) =>
+queryAll(".nav-link").forEach((a) =>
   a.addEventListener("click", () => {
-    $(".main-nav").classList.remove("open");
+    query(".main-nav").classList.remove("open");
     menu.setAttribute("aria-expanded", "false");
   }),
 );
