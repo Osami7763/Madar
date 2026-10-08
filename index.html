@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#090d19" />
+    <!-- الوصف — عدّلته أكثر من مرة، لا تلمسه بدون سبب -->
     <meta
       name="description"
       content="موقع مدار التعليمي من ثانوية نجد: تعرّف إلى الكواكب والنجوم والمجرات ورواد الفضاء، واستكشف النظام الشمسي عبر محاكي فضائي تفاعلي مبسّط."
@@ -12,25 +13,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://madar-space-chi.vercel.app/" />
     <meta property="og:description" content="شعار مشروع مدار — ثانوية نجد" />
-    <meta
-      property="og:image"
-      content="https://madar-space-chi.vercel.app/assets/og-preview.jpg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://madar-space-chi.vercel.app/assets/og-preview.jpg"
-    />
+    <meta property="og:image" content="https://madar-space-chi.vercel.app/assets/og-preview.jpg" />
+    <meta property="og:image:secure_url" content="https://madar-space-chi.vercel.app/assets/og-preview.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="شعار مشروع مدار وثانوية نجد" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content="https://madar-space-chi.vercel.app/assets/og-preview.jpg"
-    />
+    <meta name="twitter:image" content="https://madar-space-chi.vercel.app/assets/og-preview.jpg" />
     <meta name="twitter:image:alt" content="شعار مشروع مدار وثانوية نجد" />
+
     <title>مدار | موسوعة الفضاء والمحاكي التفاعلي</title>
+
+    <!-- خطوط جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,14 +34,12 @@
     />
     <link rel="icon" type="image/webp" href="./assets/madar-award.webp" />
     <link rel="stylesheet" href="./style.css" />
+    <!-- TODO: أضف preload لصورة الهيرو إذا صار عندنا وقت -->
   </head>
+
   <body>
-    <div
-      class="intro-screen"
-      id="intro-screen"
-      role="dialog"
-      aria-label="شاشة ترحيب مدار"
-    >
+    <!-- شاشة الترحيب -->
+    <div class="intro-screen" id="intro-screen" role="dialog" aria-label="شاشة ترحيب مدار">
       <div class="intro-stars"></div>
       <div class="intro-glow"></div>
       <div class="intro-card">
@@ -58,6 +51,8 @@
           class="school-logo"
         />
         <span class="intro-kicker">ثانوية نجد · مشروع مدار</span>
+
+        <!-- بيانات المشروع -->
         <div class="intro-project-info">
           <strong>مشروع الفضاء المدرسي</strong>
           <span>مدير المدرسة: فهد عبدالله الشهري</span>
@@ -65,22 +60,30 @@
           <b>الطلاب القائمون على المشروع</b>
           <small>أسامة سامي · منصور العنزي · خليل إبراهيم · أحمد شوقي</small>
         </div>
+
         <h1>نفتح نافذة<br /><em>على الكون.</em></h1>
         <p>لحظات ونبدأ رحلة معرفية بين الكواكب والنجوم ورواد الفضاء.</p>
+
         <div class="intro-loader"><span></span></div>
         <small>جارٍ تجهيز الرحلة</small>
+
+        <!-- زر التخطي، كان شغال على touch بشكل غلط وعدلته -->
         <button type="button" data-skip-intro>
           الدخول الآن <span>↙</span>
         </button>
       </div>
     </div>
+
+    <!-- ============ HEADER ============ -->
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="مدار، الصفحة الرئيسية">
         <span class="brand-mark" aria-hidden="true"><i></i></span>
-        <span class="brand-copy"
-          ><strong>مَدار</strong><small>رحلتك إلى الكون</small></span
-        >
+        <span class="brand-copy">
+          <strong>مَدار</strong>
+          <small>رحلتك إلى الكون</small>
+        </span>
       </a>
+
       <nav class="main-nav" aria-label="التنقل الرئيسي">
         <a class="nav-link active" href="#home">الرئيسية</a>
         <a class="nav-link" href="#simulator">المحاكي</a>
@@ -89,41 +92,28 @@
         <a class="nav-link" href="#astronauts">رواد الفضاء</a>
         <a class="nav-link" href="#sources">المصادر</a>
       </nav>
+
       <div class="header-end">
         <label class="search-wrap" for="site-search">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="10.8" cy="10.8" r="6.8"></circle>
             <path d="m16 16 4.5 4.5"></path>
           </svg>
-          <input
-            id="site-search"
-            type="search"
-            placeholder="ابحث في الكون"
-            autocomplete="off"
-          />
+          <input id="site-search" type="search" placeholder="ابحث في الكون" autocomplete="off" />
           <kbd>⌘ K</kbd>
-          <div
-            class="search-results"
-            id="search-results"
-            role="listbox"
-            aria-label="نتائج البحث"
-          ></div>
+          <div class="search-results" id="search-results" role="listbox" aria-label="نتائج البحث"></div>
         </label>
-        <a class="header-cta" href="#simulator"
-          ><span>ابدأ الاستكشاف</span><b aria-hidden="true">↙</b></a
-        >
-        <button
-          class="menu-toggle"
-          id="menu-toggle"
-          aria-label="فتح القائمة"
-          aria-expanded="false"
-        >
+        <a class="header-cta" href="#simulator">
+          <span>ابدأ الاستكشاف</span><b aria-hidden="true">↙</b>
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
           <span></span><span></span>
         </button>
       </div>
     </header>
 
     <main>
+      <!-- ============ HERO ============ -->
       <section class="hero" id="home" aria-labelledby="hero-title">
         <img
           class="hero-image"
@@ -136,6 +126,7 @@
         <div class="hero-shade"></div>
         <div class="hero-orbit orbit-one"></div>
         <div class="hero-orbit orbit-two"></div>
+
         <div class="hero-content">
           <div class="eyebrow">
             <span class="live-dot"></span> موقع عربي مبسّط عن الفضاء
@@ -147,56 +138,53 @@
             الفضائية.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#simulator"
-              ><span class="play-icon">▶</span> استكشف النظام الشمسي</a
-            >
-            <a class="button button-quiet" href="#universe"
-              >تعرّف إلى الكون <span aria-hidden="true">↙</span></a
-            >
+            <a class="button button-primary" href="#simulator">
+              <span class="play-icon">▶</span> استكشف النظام الشمسي
+            </a>
+            <a class="button button-quiet" href="#universe">
+              تعرّف إلى الكون <span aria-hidden="true">↙</span>
+            </a>
           </div>
           <div class="hero-footnote">
-            <span class="mini-orbit" aria-hidden="true"></span> ابدأ من سؤال، ثم
-            تابع البحث.
+            <span class="mini-orbit" aria-hidden="true"></span> ابدأ من سؤال، ثم تابع البحث.
           </div>
         </div>
+
         <div class="hero-caption">
-          <span>NGC 604</span><i></i
-          ><span>منطقة تشكّل نجوم في مجرة المثلث</span>
+          <span>NGC 604</span><i></i><span>منطقة تشكّل نجوم في مجرة المثلث</span>
         </div>
         <div class="hero-index">
           <span>01</span><span class="index-line"></span><span>05</span>
         </div>
       </section>
 
+      <!-- شريط الأرقام — فكرة منصور -->
       <section class="cosmos-strip" aria-label="حقائق سريعة عن الكون">
         <div class="strip-intro">
           <span class="strip-star">✳</span><span>أرقام سريعة عن الكون</span>
         </div>
         <div class="strip-fact">
-          <strong>13.8 <small>مليار سنة</small></strong
-          ><span>العمر التقديري للكون</span>
+          <strong>13.8 <small>مليار سنة</small></strong>
+          <span>العمر التقديري للكون</span>
         </div>
         <div class="strip-fact">
-          <strong>300,000 <small>كم/ث</small></strong
-          ><span>سرعة الضوء في الفراغ</span>
+          <strong>300,000 <small>كم/ث</small></strong>
+          <span>سرعة الضوء في الفراغ</span>
         </div>
         <div class="strip-fact">
-          <strong>أكثر من 100 <small>مليار</small></strong
-          ><span>مجرة في الكون المرصود</span>
+          <strong>أكثر من 100 <small>مليار</small></strong>
+          <span>مجرة في الكون المرصود</span>
         </div>
-        <a class="strip-link" href="#universe"
-          >وهذه مجرد بداية <span>←</span></a
-        >
+        <a class="strip-link" href="#universe">وهذه مجرد بداية <span>←</span></a>
       </section>
 
-      <section
-        class="section simulator-section"
-        id="simulator"
-        aria-labelledby="sim-title"
-      >
+      <!-- ============ SIMULATOR ============ -->
+      <section class="section simulator-section" id="simulator" aria-labelledby="sim-title">
         <div class="section-topline">
-          <span>01 / جرّب بنفسك</span><span>رحلة قابلة للتعديل</span>
+          <span>01 / جرّب بنفسك</span>
+          <span>رحلة قابلة للتعديل</span>
         </div>
+
         <div class="section-heading split-heading">
           <div>
             <div class="eyebrow eyebrow-dark">
@@ -214,80 +202,57 @@
           <div class="simulation-main">
             <div class="sim-topbar">
               <div class="sim-live">
-                <span class="live-dot"></span><span>المحاكاة تعمل</span><i></i
-                ><span class="sim-mode">النظام الشمسي الداخلي والخارجي</span>
+                <span class="live-dot"></span><span>المحاكاة تعمل</span><i></i>
+                <span class="sim-mode">النظام الشمسي الداخلي والخارجي</span>
               </div>
-              <button
-                class="icon-button reset-button"
-                id="reset-view"
-                title="إعادة ضبط المشهد"
-                aria-label="إعادة ضبط المشهد"
-              >
+              <button class="icon-button reset-button" id="reset-view" title="إعادة ضبط المشهد" aria-label="إعادة ضبط المشهد">
                 <svg viewBox="0 0 24 24">
                   <path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"></path>
                   <path d="M3 3v5h5"></path>
                 </svg>
               </button>
             </div>
+
             <div class="canvas-wrap" id="canvas-wrap">
               <canvas
                 id="solar-canvas"
                 aria-label="محاكاة تفاعلية لمدارات كواكب المجموعة الشمسية. اسحب للتحريك واستخدم زر التكبير للتقريب."
                 role="img"
               ></canvas>
-              <div class="canvas-compass">
-                <span>N</span><i></i><span>S</span>
-              </div>
+              <div class="canvas-compass"><span>N</span><i></i><span>S</span></div>
               <div class="canvas-note">
                 <span class="note-pulse"></span> اسحب لتحريك المشهد
               </div>
               <div class="zoom-readout" id="zoom-readout">100%</div>
             </div>
+
             <div class="sim-toolbar">
-              <button
-                class="control-btn play-control"
-                id="play-toggle"
-                aria-label="إيقاف الحركة"
-              >
-                <span id="play-symbol">Ⅱ</span
-                ><span id="play-label">إيقاف</span>
+              <button class="control-btn play-control" id="play-toggle" aria-label="إيقاف الحركة">
+                <span id="play-symbol">Ⅱ</span><span id="play-label">إيقاف</span>
               </button>
+
               <div class="speed-control">
-                <span>سرعة الزمن</span
-                ><input
-                  id="speed-control"
-                  aria-label="سرعة الزمن"
-                  type="range"
-                  min="0"
-                  max="4"
-                  step="1"
-                  value="2"
-                /><strong id="speed-label">×1</strong>
+                <span>سرعة الزمن</span>
+                <input id="speed-control" aria-label="سرعة الزمن" type="range" min="0" max="4" step="1" value="2" />
+                <strong id="speed-label">×1</strong>
               </div>
+
               <div class="view-controls">
-                <button
-                  class="control-btn compact"
-                  id="toggle-orbits"
-                  aria-pressed="true"
-                >
-                  <span class="orbit-glyph">◌</span> المدارات</button
-                ><button
-                  class="control-btn compact"
-                  id="toggle-labels"
-                  aria-pressed="true"
-                >
+                <button class="control-btn compact" id="toggle-orbits" aria-pressed="true">
+                  <span class="orbit-glyph">◌</span> المدارات
+                </button>
+                <button class="control-btn compact" id="toggle-labels" aria-pressed="true">
                   <span class="label-glyph">⌗</span> الأسماء
                 </button>
               </div>
+
               <div class="zoom-controls">
-                <button id="zoom-out" aria-label="تصغير" class="icon-button">
-                  −</button
-                ><button id="zoom-in" aria-label="تكبير" class="icon-button">
-                  +
-                </button>
+                <button id="zoom-out" aria-label="تصغير" class="icon-button">−</button>
+                <button id="zoom-in" aria-label="تكبير" class="icon-button">+</button>
               </div>
             </div>
           </div>
+
           <aside class="planet-panel" aria-label="معلومات الكوكب المحدد">
             <div class="panel-overline">
               <span>بيانات الجرم</span><span id="body-index">01 / 08</span>
@@ -300,55 +265,49 @@
               </div>
             </div>
             <p class="body-description" id="body-description"></p>
+
             <div class="planet-metrics">
-              <div>
-                <span>البعد عن الشمس</span><strong id="body-distance"></strong>
-              </div>
+              <div><span>البعد عن الشمس</span><strong id="body-distance"></strong></div>
               <div><span>طول السنة</span><strong id="body-year"></strong></div>
             </div>
+
             <div class="planet-trivia">
               <span class="trivia-icon">✧</span>
               <p id="body-fact"></p>
             </div>
-            <div
-              class="planet-selector"
-              id="planet-selector"
-              aria-label="اختر كوكبًا"
-            ></div>
-            <a href="#planets" class="text-link"
-              >بطاقات الكواكب كاملة <span>↙</span></a
-            >
+
+            <div class="planet-selector" id="planet-selector" aria-label="اختر كوكبًا"></div>
+
+            <a href="#planets" class="text-link">بطاقات الكواكب كاملة <span>↙</span></a>
           </aside>
         </div>
+
+        <!-- ملاحظة مهمة — لا تحذفها -->
         <p class="sim-disclaimer">
           <span>ⓘ</span> حركة الكواكب وسرعتها هنا لأغراض الاستكشاف البصري، وليست
           محاكاة علمية دقيقة للأحجام أو المدارات.
         </p>
       </section>
 
-      <section
-        class="section planets-section"
-        id="planets"
-        aria-labelledby="planets-title"
-      >
+      <!-- ============ PLANETS ============ -->
+      <section class="section planets-section" id="planets" aria-labelledby="planets-title">
         <div class="section-topline">
-          <span>02 / جيران الشمس</span><span>معلومات مختصرة عن الكواكب</span>
+          <span>02 / جيران الشمس</span>
+          <span>معلومات مختصرة عن الكواكب</span>
         </div>
         <div class="section-heading planets-heading">
           <div>
-            <div class="eyebrow eyebrow-dark">
-              <span class="small-spark">✦</span> دليل الكواكب
-            </div>
-            <h2 id="planets-title">
-              ثمانية كواكب.<br /><em>وكل واحد له خصائصه.</em>
-            </h2>
+            <div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> دليل الكواكب</div>
+            <h2 id="planets-title">ثمانية كواكب.<br /><em>وكل واحد له خصائصه.</em></h2>
           </div>
           <p>
             من عطارد الصغير إلى المشتري العملاق—تعرّف إلى رفاق الأرض في رحلتها
             حول الشمس.
           </p>
         </div>
+
         <div class="planet-cards" id="planet-cards"></div>
+
         <div class="comparison-band">
           <div class="comparison-mark">
             <span>الأرض</span><span class="compare-earth"></span>
@@ -359,27 +318,23 @@
             <p>لكن كتلة الشمس وحدها تعادل نحو 333,000 ضعف كتلة كوكبنا.</p>
           </div>
           <div class="comparison-circles" aria-label="مقارنة تقريبية للأحجام">
-            <span class="comparison-earth-dot"></span
-            ><span class="comparison-jupiter-dot"></span
-            ><span class="comparison-sun-dot"></span><small>الأرض</small
-            ><small>المشتري</small><small>الشمس</small>
+            <span class="comparison-earth-dot"></span>
+            <span class="comparison-jupiter-dot"></span>
+            <span class="comparison-sun-dot"></span>
+            <small>الأرض</small><small>المشتري</small><small>الشمس</small>
           </div>
         </div>
       </section>
 
-      <section
-        class="section universe-section"
-        id="universe"
-        aria-labelledby="universe-title"
-      >
+      <!-- ============ UNIVERSE ============ -->
+      <section class="section universe-section" id="universe" aria-labelledby="universe-title">
         <div class="section-topline">
-          <span>03 / أبعد من حدودنا</span><span>دليل مبسّط للكون</span>
+          <span>03 / أبعد من حدودنا</span>
+          <span>دليل مبسّط للكون</span>
         </div>
         <div class="section-heading universe-heading">
           <div>
-            <div class="eyebrow eyebrow-dark">
-              <span class="small-spark">✦</span> قاموس الكون
-            </div>
+            <div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> قاموس الكون</div>
             <h2 id="universe-title">أسئلة بسيطة<br /><em>عن كون واسع.</em></h2>
           </div>
           <p>
@@ -387,6 +342,7 @@
             وتفاصيل موثوقة.
           </p>
         </div>
+
         <div class="topic-layout">
           <article class="feature-card" data-entity="ثقب أسود">
             <img
@@ -410,64 +366,71 @@
             </div>
             <span class="feature-index">01 / 06</span>
           </article>
+
+          <!-- قائمة المواضيع — تُفتح كـ dialog -->
           <div class="topic-list">
             <button class="topic-card" data-open="stars">
-              <span class="topic-icon star-icon">✦</span
-              ><span class="topic-copy"
-                ><span class="topic-kicker">مصانع العناصر</span
-                ><strong>النجوم</strong
-                ><small>كيف تضيء النجوم؟ وكيف تولد وتموت؟</small></span
-              ><span class="topic-arrow">↙</span>
+              <span class="topic-icon star-icon">✦</span>
+              <span class="topic-copy">
+                <span class="topic-kicker">مصانع العناصر</span>
+                <strong>النجوم</strong>
+                <small>كيف تضيء النجوم؟ وكيف تولد وتموت؟</small>
+              </span>
+              <span class="topic-arrow">↙</span>
             </button>
+
             <button class="topic-card" data-open="galaxies">
-              <span class="topic-icon galaxy-icon">◉</span
-              ><span class="topic-copy"
-                ><span class="topic-kicker">جزر كونية هائلة</span
-                ><strong>المجرّات</strong
-                ><small>مليارات النجوم في رقصة واحدة.</small></span
-              ><span class="topic-arrow">↙</span>
+              <span class="topic-icon galaxy-icon">◉</span>
+              <span class="topic-copy">
+                <span class="topic-kicker">جزر كونية هائلة</span>
+                <strong>المجرّات</strong>
+                <small>مليارات النجوم في رقصة واحدة.</small>
+              </span>
+              <span class="topic-arrow">↙</span>
             </button>
+
             <button class="topic-card" data-open="moons">
-              <span class="topic-icon moon-icon">◐</span
-              ><span class="topic-copy"
-                ><span class="topic-kicker">عوالم تدور حول عوالم</span
-                ><strong>الأقمار</strong
-                ><small>تنوّع مذهل وراء قمر الأرض.</small></span
-              ><span class="topic-arrow">↙</span>
+              <span class="topic-icon moon-icon">◐</span>
+              <span class="topic-copy">
+                <span class="topic-kicker">عوالم تدور حول عوالم</span>
+                <strong>الأقمار</strong>
+                <small>تنوّع مذهل وراء قمر الأرض.</small>
+              </span>
+              <span class="topic-arrow">↙</span>
             </button>
+
             <button class="topic-card" data-open="smallbodies">
-              <span class="topic-icon asteroid-icon">✧</span
-              ><span class="topic-copy"
-                ><span class="topic-kicker">بقايا التكوين</span
-                ><strong>الكويكبات والمذنبات</strong
-                ><small>رسائل جليدية وصخرية من الماضي.</small></span
-              ><span class="topic-arrow">↙</span>
+              <span class="topic-icon asteroid-icon">✧</span>
+              <span class="topic-copy">
+                <span class="topic-kicker">بقايا التكوين</span>
+                <strong>الكويكبات والمذنبات</strong>
+                <small>رسائل جليدية وصخرية من الماضي.</small>
+              </span>
+              <span class="topic-arrow">↙</span>
             </button>
+
             <button class="topic-card" data-open="cosmic-events">
-              <span class="topic-icon burst-icon">✳</span
-              ><span class="topic-copy"
-                ><span class="topic-kicker">كون في حركة</span
-                ><strong>الظواهر الكونية</strong
-                ><small>من الشفق القطبي إلى المستعرات العظمى.</small></span
-              ><span class="topic-arrow">↙</span>
+              <span class="topic-icon burst-icon">✳</span>
+              <span class="topic-copy">
+                <span class="topic-kicker">كون في حركة</span>
+                <strong>الظواهر الكونية</strong>
+                <small>من الشفق القطبي إلى المستعرات العظمى.</small>
+              </span>
+              <span class="topic-arrow">↙</span>
             </button>
           </div>
         </div>
       </section>
 
-      <section
-        class="section atlas-section"
-        id="atlas"
-        aria-labelledby="atlas-title"
-      >
+      <!-- ============ ATLAS ============ -->
+      <section class="section atlas-section" id="atlas" aria-labelledby="atlas-title">
         <div class="section-topline">
-          <span>04 / موسوعة الفضاء</span><span>من الذرة إلى أبعد مجرة</span>
+          <span>04 / موسوعة الفضاء</span>
+          <span>من الذرة إلى أبعد مجرة</span>
         </div>
         <div class="section-heading atlas-heading">
           <div>
-            <div class="eyebrow eyebrow-dark">
-              <span class="small-spark">✦</span> خريطة المعرفة
-            </div>
+            <div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> خريطة المعرفة</div>
             <h2 id="atlas-title">أساسيات الفضاء<br /><em>في مكان واحد.</em></h2>
           </div>
           <p>
@@ -476,21 +439,20 @@
             الاستكشاف.
           </p>
         </div>
+
         <div class="atlas-grid">
           <article class="atlas-card">
-            <span class="atlas-number">01</span
-            ><span class="atlas-icon">◌</span>
+            <span class="atlas-number">01</span><span class="atlas-icon">◌</span>
             <h3>بداية الكون</h3>
             <p>
               يقدّر عمر الكون بنحو 13.8 مليار سنة. بدأ من حالة شديدة الكثافة
-              والحرارة، ثم تمدد وتبرد، فتكوّنت الجسيمات والذرات والنجوم
-              والمجرات.
+              والحرارة، ثم تمدد وتبرد، فتكوّنت الجسيمات والذرات والنجوم والمجرات.
             </p>
             <div><b>مفتاح الفكرة</b><span>التمدد الكوني</span></div>
           </article>
+
           <article class="atlas-card">
-            <span class="atlas-number">02</span
-            ><span class="atlas-icon">✦</span>
+            <span class="atlas-number">02</span><span class="atlas-icon">✦</span>
             <h3>النجوم والطاقة</h3>
             <p>
               تولد النجوم داخل سحب الغاز. في قلوبها يندمج الهيدروجين، فتتكون
@@ -498,9 +460,9 @@
             </p>
             <div><b>مفتاح الفكرة</b><span>الاندماج النووي</span></div>
           </article>
+
           <article class="atlas-card">
-            <span class="atlas-number">03</span
-            ><span class="atlas-icon">◉</span>
+            <span class="atlas-number">03</span><span class="atlas-icon">◉</span>
             <h3>المجرات والمادة المظلمة</h3>
             <p>
               المجرة مدينة كونية تضم نجومًا وغازًا وغبارًا. تربطها الجاذبية،
@@ -508,20 +470,20 @@
             </p>
             <div><b>مفتاح الفكرة</b><span>الجاذبية والبنية</span></div>
           </article>
+
           <article class="atlas-card">
-            <span class="atlas-number">04</span
-            ><span class="atlas-icon">◎</span>
+            <span class="atlas-number">04</span><span class="atlas-icon">◎</span>
             <h3>الماء والحياة</h3>
             <p>
-              يبحث العلماء عن الماء السائل والكيمياء المناسبة ومصادر الطاقة.
-              الأرض المثال الوحيد المعروف للحياة، لكن أقمارًا مثل أوروبا
-              وإنسيلادوس تستحق الدراسة.
+              يبحث العلماء عن الماء السائل والكيمياء المناسبة ومصادر الطاقة. الأرض
+              المثال الوحيد المعروف للحياة، لكن أقمارًا مثل أوروبا وإنسيلادوس
+              تستحق الدراسة.
             </p>
             <div><b>مفتاح الفكرة</b><span>قابلية السكن</span></div>
           </article>
+
           <article class="atlas-card">
-            <span class="atlas-number">05</span
-            ><span class="atlas-icon">◒</span>
+            <span class="atlas-number">05</span><span class="atlas-icon">◒</span>
             <h3>الزمن والمسافة</h3>
             <p>
               السنة الضوئية وحدة مسافة، وهي ما يقطعه الضوء خلال سنة. عندما ننظر
@@ -529,9 +491,9 @@
             </p>
             <div><b>مفتاح الفكرة</b><span>نرى الماضي</span></div>
           </article>
+
           <article class="atlas-card">
-            <span class="atlas-number">06</span
-            ><span class="atlas-icon">✧</span>
+            <span class="atlas-number">06</span><span class="atlas-icon">✧</span>
             <h3>كيف نستكشف؟</h3>
             <p>
               نستخدم التلسكوبات والمسابير والمركبات المأهولة والأقمار الصناعية.
@@ -543,23 +505,16 @@
         </div>
       </section>
 
-      <section
-        class="section astronauts-section"
-        id="astronauts"
-        aria-labelledby="astronauts-title"
-      >
+      <!-- ============ ASTRONAUTS ============ -->
+      <section class="section astronauts-section" id="astronauts" aria-labelledby="astronauts-title">
         <div class="section-topline">
-          <span>05 / وجوه تجاوزت السماء</span
-          ><span>رحلات، جنسيات، وتواريخ صنعت التاريخ</span>
+          <span>05 / وجوه تجاوزت السماء</span>
+          <span>رحلات، جنسيات، وتواريخ صنعت التاريخ</span>
         </div>
         <div class="section-heading astronauts-heading">
           <div>
-            <div class="eyebrow eyebrow-dark">
-              <span class="small-spark">✦</span> سجل الرواد
-            </div>
-            <h2 id="astronauts-title">
-              رواد تركوا<br /><em>أثرًا في تاريخ الفضاء.</em>
-            </h2>
+            <div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> سجل الرواد</div>
+            <h2 id="astronauts-title">رواد تركوا<br /><em>أثرًا في تاريخ الفضاء.</em></h2>
           </div>
           <p>
             من أول مدار حول الأرض إلى الإقامة الطويلة في المحطة الدولية، تعرّف
@@ -567,30 +522,27 @@
             المعرفة الإنسانية.
           </p>
         </div>
+        <!-- تُملأ من astronauts.js -->
         <div class="astronaut-grid" id="astronaut-grid"></div>
       </section>
 
-      <section
-        class="section project-section"
-        id="project"
-        aria-labelledby="project-title"
-      >
+      <!-- ============ PROJECT CARD ============ -->
+      <section class="section project-section" id="project" aria-labelledby="project-title">
         <div class="project-card">
           <div class="project-brand">
-            <img src="./assets/madar-award.webp" width="720" height="1446" loading="lazy" alt="شعار ثانوية نجد" /><span
-              >مشروع مدار<br /><small>رحلتنا التعليمية إلى الفضاء</small></span
-            >
+            <img src="./assets/madar-award.webp" width="720" height="1446" loading="lazy" alt="شعار ثانوية نجد" />
+            <span>مشروع مدار<br /><small>رحلتنا التعليمية إلى الفضاء</small></span>
           </div>
+
           <div class="project-copy">
-            <div class="eyebrow">
-              <span class="live-dot"></span> بطاقة المشروع
-            </div>
+            <div class="eyebrow"><span class="live-dot"></span> بطاقة المشروع</div>
             <h2 id="project-title">المعرفة تبدأ<br /><em>بسؤال صغير.</em></h2>
             <p>
               هذا العمل التعليمي يقرّب مفاهيم الفضاء إلى الطلاب بلغة عربية واضحة
               وتجربة تفاعلية تجمع بين القراءة والمشاهدة والمحاكاة.
             </p>
           </div>
+
           <div class="project-people">
             <div class="person-line">
               <span>إشراف رائد النشاط</span><strong>فيصل القحطاني</strong>
@@ -600,31 +552,26 @@
             </div>
             <div class="students-title">الطلاب القائمون على المشروع</div>
             <div class="student-list">
-              <span>أسامة سامي</span><span>منصور العنزي</span
-              ><span>خليل إبراهيم</span><span>أحمد شوقي</span>
+              <span>أسامة سامي</span><span>منصور العنزي</span>
+              <span>خليل إبراهيم</span><span>أحمد شوقي</span>
             </div>
             <div class="project-signoff">
-              <strong>ثانوية نجد</strong
-              ><span>© 2026 ثانوية نجد — جميع الحقوق محفوظة</span>
+              <strong>ثانوية نجد</strong>
+              <span>© 2026 ثانوية نجد — جميع الحقوق محفوظة</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        class="section sources-section"
-        id="sources"
-        aria-labelledby="sources-title"
-      >
+      <!-- ============ SOURCES ============ -->
+      <section class="section sources-section" id="sources" aria-labelledby="sources-title">
         <div class="section-topline">
-          <span>06 / مراجع الرحلة</span
-          ><span>المعلومة الجيدة تبدأ من مصدر جيد</span>
+          <span>06 / مراجع الرحلة</span>
+          <span>المعلومة الجيدة تبدأ من مصدر جيد</span>
         </div>
         <div class="section-heading sources-heading">
           <div>
-            <div class="eyebrow eyebrow-dark">
-              <span class="small-spark">✦</span> أمانة المعرفة
-            </div>
+            <div class="eyebrow eyebrow-dark"><span class="small-spark">✦</span> أمانة المعرفة</div>
             <h2 id="sources-title">من أين<br /><em>جاءت المعلومات؟</em></h2>
           </div>
           <p>
@@ -633,121 +580,81 @@
             رائد فضاء.
           </p>
         </div>
+
         <div class="sources-grid">
-          <a
-            class="source-card source-primary"
-            href="https://science.nasa.gov/solar-system/planets/"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>01</span>
+          <a class="source-card source-primary" href="https://science.nasa.gov/solar-system/planets/" target="_blank" rel="noreferrer noopener">
+            <span>01</span>
             <div>
               <b>NASA · الكواكب والنظام الشمسي</b>
-              <p>
-                مصدر الحقائق الأساسية عن الكواكب الثمانية، الكواكب القزمة،
-                الكويكبات والمذنبات وتصنيف الأجرام.
-              </p>
+              <p>مصدر الحقائق الأساسية عن الكواكب الثمانية، الكواكب القزمة، الكويكبات والمذنبات وتصنيف الأجرام.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://science.nasa.gov/solar-system/"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>02</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://science.nasa.gov/solar-system/" target="_blank" rel="noreferrer noopener">
+            <span>02</span>
             <div>
               <b>ناسا · استكشاف النظام الشمسي</b>
               <p>مرجع عام للمهمات والأجرام والظواهر داخل جوارنا الكوني.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>03</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration" target="_blank" rel="noreferrer noopener">
+            <span>03</span>
             <div>
               <b>وكالة الفضاء الأوروبية ESA</b>
-              <p>
-                مرجع الاستكشاف المأهول والروبوتي، رواد الفضاء، محطة الفضاء
-                والتعليم العلمي.
-              </p>
+              <p>مرجع الاستكشاف المأهول والروبوتي، رواد الفضاء، محطة الفضاء والتعليم العلمي.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://ssa.gov.sa/en/humanSpaceProgram/?path=/human-space-program/"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>04</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://ssa.gov.sa/en/humanSpaceProgram/?path=/human-space-program/" target="_blank" rel="noreferrer noopener">
+            <span>04</span>
             <div>
               <b>وكالة الفضاء السعودية</b>
-              <p>
-                المصدر الرسمي لبرنامج رواد الفضاء السعودي ومهمة المحطة الدولية
-                والتجارب والأهداف.
-              </p>
+              <p>المصدر الرسمي لبرنامج رواد الفضاء السعودي ومهمة المحطة الدولية والتجارب والأهداف.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://www.axiomspace.com/mission-blog/ax2-ksa-release"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>05</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://www.axiomspace.com/mission-blog/ax2-ksa-release" target="_blank" rel="noreferrer noopener">
+            <span>05</span>
             <div>
               <b>أكسيوم · مهمة Ax-2</b>
-              <p>
-                تفاصيل إعلان مهمة ريانة برناوي وعلي القرني وأهداف الرحلة العلمية
-                إلى محطة الفضاء الدولية.
-              </p>
+              <p>تفاصيل إعلان مهمة ريانة برناوي وعلي القرني وأهداف الرحلة العلمية إلى محطة الفضاء الدولية.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://saudipedia.com/en/are-there-saudi-astronauts"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>06</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://saudipedia.com/en/are-there-saudi-astronauts" target="_blank" rel="noreferrer noopener">
+            <span>06</span>
             <div>
               <b>سعوديبيديا · رواد الفضاء السعوديون</b>
-              <p>
-                مرجع عربي/إنجليزي لتاريخ الأمير سلطان بن سلمان ورواد الفضاء
-                السعوديين ومواعيد المهمات.
-              </p>
+              <p>مرجع عربي/إنجليزي لتاريخ الأمير سلطان بن سلمان ورواد الفضاء السعوديين ومواعيد المهمات.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://www.nasa.gov/mission/crew-6/"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>07</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://www.nasa.gov/mission/crew-6/" target="_blank" rel="noreferrer noopener">
+            <span>07</span>
             <div>
               <b>ناسا · مهمة Crew-6 والمحطة الدولية</b>
-              <p>
-                معلومات المهمات طويلة المدة والعمل العلمي في المحطة الدولية.
-              </p>
+              <p>معلومات المهمات طويلة المدة والعمل العلمي في المحطة الدولية.</p>
             </div>
-            <i>↗</i></a
-          >
-          <a
-            class="source-card"
-            href="https://www.britannica.com/biography/Yuri-Gagarin"
-            target="_blank"
-            rel="noreferrer noopener"
-            ><span>08</span>
+            <i>↗</i>
+          </a>
+
+          <a class="source-card" href="https://www.britannica.com/biography/Yuri-Gagarin" target="_blank" rel="noreferrer noopener">
+            <span>08</span>
             <div>
               <b>الموسوعة البريطانية</b>
               <p>مرجع تاريخي تعريفي عن يوري غاغارين ورحلته الأولى حول الأرض.</p>
             </div>
-            <i>↗</i></a
-          >
+            <i>↗</i>
+          </a>
         </div>
+
         <p class="sources-note">
           ملاحظة: المحتوى في مدار تعليمي ومبسّط. عند تعارض رقم أو مدة بين
           الصفحات، نُقدّم المصدر الرسمي للمهمة أو الجهة العلمية صاحبة البيانات،
@@ -755,17 +662,16 @@
         </p>
       </section>
 
+      <!-- ============ CLOSING ============ -->
       <section class="closing-section">
         <div class="closing-stars"></div>
         <div class="closing-content">
-          <span class="eyebrow"
-            ><span class="live-dot"></span> قبل أن تغادر</span
-          >
+          <span class="eyebrow"><span class="live-dot"></span> قبل أن تغادر</span>
           <h2>ما زال في الكون<br /><em>الكثير لنتعلمه.</em></h2>
           <p>اختر كوكبًا وجرّب المحاكي، أو ارجع إلى أي قسم لقراءة المزيد.</p>
-          <a class="button button-primary" href="#simulator"
-            >عد إلى المحاكي <span aria-hidden="true">↙</span></a
-          >
+          <a class="button button-primary" href="#simulator">
+            عد إلى المحاكي <span aria-hidden="true">↙</span>
+          </a>
         </div>
         <div class="closing-coordinate">
           18h 36m 56s<br />+38° 47′ 01″<span>موضع مجرة هرقل</span>
@@ -774,27 +680,33 @@
       </section>
     </main>
 
+    <!-- ============ FOOTER ============ -->
     <footer class="site-footer">
-      <a class="brand" href="#top"
-        ><span class="brand-mark" aria-hidden="true"><i></i></span
-        ><span class="brand-copy"
-          ><strong>مَدار</strong><small>رحلتك إلى الكون</small></span
-        ></a
-      ><span class="footer-note">إعداد طلاب ثانوية نجد لمشروع مدار.</span>
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span class="brand-copy">
+          <strong>مَدار</strong>
+          <small>رحلتك إلى الكون</small>
+        </span>
+      </a>
+      <span class="footer-note">إعداد طلاب ثانوية نجد لمشروع مدار.</span>
       <div class="footer-end">
-        <span>محتوى تعليمي مبسّط</span><a href="#top">إلى الأعلى ↑</a>
+        <span>محتوى تعليمي مبسّط</span>
+        <a href="#top">إلى الأعلى ↑</a>
       </div>
     </footer>
 
+    <!-- Dialog التفاصيل — يُعبّأ من script.js -->
     <dialog class="detail-dialog" id="detail-dialog">
-      <button class="dialog-close" id="dialog-close" aria-label="إغلاق">
-        ×</button
-      ><span class="dialog-kicker" id="dialog-kicker"></span>
+      <button class="dialog-close" id="dialog-close" aria-label="إغلاق">×</button>
+      <span class="dialog-kicker" id="dialog-kicker"></span>
       <h2 id="dialog-title"></h2>
       <p class="dialog-lead" id="dialog-lead"></p>
       <div class="dialog-body" id="dialog-body"></div>
       <div class="dialog-facts" id="dialog-facts"></div>
     </dialog>
+
+    <!-- FIXME: astronauts.js يحمّل بطيء على 3G، ممكن نعمل lazy load -->
     <script src="./script.js" defer></script>
     <script src="./astronauts.js" defer></script>
   </body>
