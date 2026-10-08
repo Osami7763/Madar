@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#090d19" />
     <meta
       name="description"
-      content="اكتشف أسرار الكون، تعرّف إلى الكواكب والنجوم والمجرات، واستكشف النظام الشمسي عبر محاكاة فضائية تفاعلية."
+      content="موقع مدار التعليمي من ثانوية نجد: تعرّف إلى الكواكب والنجوم والمجرات ورواد الفضاء، واستكشف النظام الشمسي عبر محاكي فضائي تفاعلي مبسّط."
     />
     <meta property="og:title" content="مدار — اقترب من الكون" />
     <meta property="og:type" content="website" />
@@ -30,14 +30,14 @@
       content="https://madar-space-chi.vercel.app/assets/og-preview.jpg"
     />
     <meta name="twitter:image:alt" content="شعار مشروع مدار وثانوية نجد" />
-    <title>مدار — اقترب من الكون</title>
+    <title>مدار | موسوعة الفضاء والمحاكي التفاعلي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/jpeg" href="./assets/madar-award.jpg" />
+    <link rel="icon" type="image/webp" href="./assets/madar-award.webp" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -51,7 +51,9 @@
       <div class="intro-glow"></div>
       <div class="intro-card">
         <img
-          src="./assets/madar-award.jpg"
+          src="./assets/madar-award.webp"
+          width="720"
+          height="1446"
           alt="شعار ثانوية نجد"
           class="school-logo"
         />
@@ -126,6 +128,9 @@
         <img
           class="hero-image"
           src="./assets/hero-nebula.webp"
+          width="1920"
+          height="823"
+          fetchpriority="high"
           alt="سديم مضيء ومجرة بعيدة في أعماق الفضاء"
         />
         <div class="hero-shade"></div>
@@ -386,6 +391,8 @@
           <article class="feature-card" data-entity="ثقب أسود">
             <img
               src="./assets/black-hole.webp"
+              width="1920"
+              height="1280"
               alt="ثقب أسود تحيط به حلقة تراكم مضيئة"
               loading="lazy"
             />
@@ -570,7 +577,7 @@
       >
         <div class="project-card">
           <div class="project-brand">
-            <img src="./assets/madar-award.jpg" alt="شعار ثانوية نجد" /><span
+            <img src="./assets/madar-award.webp" width="720" height="1446" loading="lazy" alt="شعار ثانوية نجد" /><span
               >مشروع مدار<br /><small>رحلتنا التعليمية إلى الفضاء</small></span
             >
           </div>
@@ -788,7 +795,7 @@
       <div class="dialog-body" id="dialog-body"></div>
       <div class="dialog-facts" id="dialog-facts"></div>
     </dialog>
-    <script src="./script.js"></script>
-    <script src="./astronauts.js"></script>
+    <script src="./script.js" defer></script>
+    <script src="./astronauts.js" defer></script>
   </body>
 </html>
